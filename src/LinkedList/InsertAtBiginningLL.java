@@ -17,6 +17,15 @@ class LL{
         }
         size+=1;
     }
+    public int deleteFirst(){
+        int data=head.data;
+        head=head.next;
+        if(head==null){
+            tail=null;
+        }
+        size--;
+        return data;
+    }
     public void display(){
         Node temp=head;
         while(temp!=null){
@@ -37,14 +46,15 @@ class LL{
         }
     }
 }
-public class LinkedList {
+public class InsertAtBiginningLL {
     public static void main(String[] args){
         Scanner sc=new Scanner(System.in);
         LL list=new LL();
         list.InsertAtFirst(30);
         list.InsertAtFirst(20);
         list.InsertAtFirst(10);
-        list.InsertAtFirst(10);
+        list.InsertAtFirst(80);
+        System.out.println(list.deleteFirst());
         list.display();
     }
 
