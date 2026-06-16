@@ -43,6 +43,26 @@ class LinkL{
         temp.next=position;
         size++;
     }
+    public int  deletatposition(int index){
+        if(index==0){
+//            return deletefirst();
+        }
+        if(index==size-1){
+//            return deletelast();
+        }
+        Node prev=get(index-1);
+        int data=prev.next.data;
+        prev.next=prev.next.next;
+        size--;
+        return data;
+    }
+    public Node get(int index){
+        Node node=head;
+        for(int i=0; i<index; i++){
+            node=node.next;
+        }
+        return node;
+    }
     public void Display(){
         Node temp=head;
         while(temp!=null){
@@ -70,7 +90,10 @@ public class InsertAtIndexLL {
         list.InsertAtFirst(10);
         list.InsertAtFirst(40);
         list.InsertAtLast(99);
+        list.Display();
         list.InsertAtPosition(50,3);
+        list.Display();
+        list.deletatposition(3);
         list.Display();
     }
 }
